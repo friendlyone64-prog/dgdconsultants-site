@@ -42,9 +42,29 @@ img { max-width: 100%; display: block; }
 .brand { display: inline-flex; flex-direction: column; text-decoration: none; line-height: .9; }
 .brand-main { font-family: var(--serif); font-size: 26px; letter-spacing: .02em; }
 .brand-sub { font-size: 7.5px; letter-spacing: .28em; margin-top: 7px; color: var(--ink-soft); }
+.nav-zone { display: flex; align-items: center; gap: 26px; }
 .nav { display: flex; gap: 30px; font-size: 13.5px; }
 .nav a { text-decoration: none; color: var(--ink-soft); }
 .nav a:hover { color: var(--ink); }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.language-switch a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.language-switch a.active {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+}
+.language-switch span { color: #a1a8ad; }
 
 .hero { padding-top: 70px; padding-bottom: 84px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); align-items: center; gap: 84px; }
@@ -62,7 +82,6 @@ h1 { font-size: clamp(54px, 6.8vw, 84px); letter-spacing: -.035em; max-width: 76
 .button.secondary { background: transparent; }
 .button:hover { transform: translateY(-1px); }
 
-/* Portrait intentionally restrained: presence without dominating the message. */
 .portrait-wrap { margin: 0 0 0 auto; position: relative; width: min(100%, 350px); }
 .portrait-wrap::before { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--line); z-index: -1; }
 .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 12%; }
@@ -95,7 +114,6 @@ blockquote { margin: 30px 0 0; padding: 0 0 0 22px; border-left: 1px solid var(-
 .contact-name { margin: 0; font-family: var(--serif); font-size: 28px; }
 .contact-card > p:nth-child(2) { margin: 4px 0 24px; color: var(--ink-soft); }
 .contact-links { display: grid; gap: 10px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.contact-note { margin: 17px 0 0; font-size: 12.5px; color: #7b848d; }
 
 .footer { border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 12.5px; color: var(--ink-soft); }
 .footer-inner { display: flex; justify-content: space-between; gap: 28px; }
@@ -116,6 +134,7 @@ blockquote { margin: 30px 0 0; padding: 0 0 0 22px; border-left: 1px solid var(-
 @media (max-width: 560px) {
   .container { width: min(100% - 30px, var(--max)); }
   .nav-wrap { height: 64px; }
+  .nav-zone { gap: 12px; }
   h1 { font-size: 48px; }
   h2 { font-size: 38px; }
   .role { font-size: 21px; }
